@@ -1,5 +1,5 @@
 ###
-### Constatnts for ASC2PET
+### Main Script for ASC2PET
 ### Mike Hensley, 2023
 ###
 
