@@ -1,0 +1,15 @@
+##
+## The following section is copied from GitHub's Python.gitignore file
+##
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+##
+## The rest of this file was created by Mike Hensley
+##
+
+# Catch and ignore TODO files
+TODO*
