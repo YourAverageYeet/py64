@@ -13,3 +13,6 @@ __pycache__/
 
 # Catch and ignore TODO files
 TODO*
+
+# Ignore the ".vscode" directory
+.vscode
