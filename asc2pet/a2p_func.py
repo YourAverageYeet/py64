@@ -6,10 +6,20 @@
 # Character Strings
 
 pass_chars = """ !"#$%&'()*+,-./0123456789:;<=>?@[]^"""
+"""Characters `_asc2pet` should pass over"""
 
 skip_chars = """\_`{|}~"""
+"""Characters in `ASCII` that have no equivalent in `PETSCII`"""
 
 def _asc2pet(char):
+    """Converts a single string between ASCII and PETSCII
+    
+    Arguments:
+        char -- The character to be converted
+
+    Returns:
+        An integer value dependant on what kind of character is input
+    """    
     byte = ord(char)
     if(char in skip_chars):
         return 0
@@ -26,6 +36,16 @@ def _asc2pet(char):
     pass
 
 def _char_notif(conv_val):
+    """Alerts the user to a notable character in their string.
+    While this function does not say *where* the offending character is, it
+    should be quite obvious 
+
+    Arguments:
+        conv_val -- An output value from `_asc2pet()`
+
+    Returns:
+        Always returns 0; any output is through messages printed to stdout.
+    """    
     if(not conv_val):
         print("Unsupported character found, skipping...")
         return 0
@@ -40,6 +60,15 @@ def _char_notif(conv_val):
     pass
 
 def change_words(word_list):
+    """Converts a list of words between `ASCII` and `PETSCII`. In this context
+    a "word" is a series of characters.
+
+    Arguments:
+        word_list -- A list of words to be converted
+
+    Returns:
+        A list of converted words. Spaces not included.
+    """    
     ret_list = []
     for word in word_list:
         tmp_word = []
