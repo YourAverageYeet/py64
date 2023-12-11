@@ -67,10 +67,10 @@ def change_string(input_obj):
     Returns:
         A converted string.
     """
-    if(type(input_obj) != str or type(input_obj) != list):
+    if(type(input_obj) is not str and type(input_obj) is not list):
         obj_type = type(input_obj)
         raise TypeError(f"change_string cannot operate on a object of type \"\
-                        {obj_type},\" only \"str\" and \"list.\"")
+{obj_type},\" only \"str\" and \"list.\"")
     else:
         ret_str = ""
         if(type(input_obj) == list):
@@ -92,8 +92,8 @@ def change_string(input_obj):
                 _char_notif(new_c)
                 continue
             else:
-                ret_str += new_c
+                ret_str += chr(new_c)
                 pass
             pass
-        return ret_list
+        return ret_str
     pass
