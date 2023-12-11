@@ -52,31 +52,48 @@ def _char_notif(conv_val):
     elif(conv_val == 1):
         print("Control character found, skipping...")
         return 0
-    elif(conv_val == -1):
-        print("Extended ASCII or Unicode character found, skipping...")
-        return 0
     else:
+        print("Extended ASCII or Unicode character found, skipping...")
         return 0
     pass
 
-def change_words(word_list):
-    """Converts a list of words between `ASCII` and `PETSCII`. In this context
-    a "word" is a series of characters.
+def change_string(input_obj):
+    """Converts a string `ASCII` and `PETSCII`. It will also construct a string
+    if it is passed a list of words, where a "word" is a series of characters.
 
     Arguments:
-        word_list -- A list of words to be converted
+        input_obj -- Either a string or a list of words to be converted
 
     Returns:
-        A list of converted words. Spaces not included.
-    """    
-    ret_list = []
-    for word in word_list:
-        tmp_word = []
-        for c in word:
-            new_c = _asc2pet(c)
-            _char_notif(new_c)
-            tmp_word.append(new_c)
+        A converted string.
+    """
+    if(type(input_obj) != str or type(input_obj) != list):
+        obj_type = type(input_obj)
+        raise TypeError(f"change_string cannot operate on a object of type \"\
+                        {obj_type},\" only \"str\" and \"list.\"")
+    else:
+        ret_str = ""
+        if(type(input_obj) == list):
+            tmp_str = ""
+            final = len(input_obj) - 1
+            for word in input_obj:
+                tmp_str += word
+                word_index = input_obj.index(word)
+                if(word_index != final):
+                    tmp_str += " "
+                    pass
+                pass
+            input_obj = tmp_str
             pass
-        ret_list.append(tmp_word)
-        pass
-    return ret_list
+        ret_str = ""
+        for char in input_obj:
+            new_c = _asc2pet(char)
+            if(new_c in [-1, 0, 1]):
+                _char_notif(new_c)
+                continue
+            else:
+                ret_str += new_c
+                pass
+            pass
+        return ret_list
+    pass

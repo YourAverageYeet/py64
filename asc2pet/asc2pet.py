@@ -14,20 +14,8 @@ def main():
     else:
         print(f"\nProcrssing the following snippets: {argv[1:]}")
         print(f"{len(argv[1:])} total sentence snippets.\n")
-        conv_list = a2pf.change_words(argv[1:])
-        new_sentence = ""
-        print("\nConverted sentence: ", end="")
-        for word in conv_list:
-            for b in word:
-                print(chr(b), end="")
-                pass
-            if(conv_list.index(word) == (len(conv_list) - 1)):
-                print("\n")
-                pass
-            else:
-                print(" ", end="")
-                pass
-            pass
+        conv_str = a2pf.change_string(argv[1:])
+        print(f"\nConverted string:\n\t{conv_str}\n")
         return 0
     pass
 
