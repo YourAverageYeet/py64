@@ -18,13 +18,16 @@
 
 ---
 
-### Planned Features:
+### In This Branch:
 
 - File-wise processing -- `-f=[FILE_NAME]` option
   
   - `.txt -> .pet` -- `-t=txt` modifier option
   
   - `.pet -> .txt` -- `-t=pet` modifier option
+
+---
+### Planned Features:
 
 - `PETSCII` specific escape sequences -- will always be active
 
