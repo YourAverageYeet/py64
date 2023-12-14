@@ -11,6 +11,10 @@
     - `ASC2PET` -- Convert between `ASCII` and `PETSCII` text encodings (Heavy
     WIP)
 
+- #### Disk
+
+    - `D64TOOL` -- A tool for pulling information from `.d64` disk images
+
 ---
 
 ### Planned Tools:
@@ -19,12 +23,10 @@
 
     - `64SCREEN` -- Creates text-screens for display on the C64
 
-- #### Disk
-
-    - `D64MAP` -- A tool for pulling information from `.d64` disk images
-
 - #### Image / Sprite
 
     - `PIC2SPR` -- Creates a C64-compatable sprite from small image files
 
     - `PIC2DISP` -- Creates an image able to be displayed by a C64
+
+**`More to be announced`**

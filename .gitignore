@@ -16,3 +16,7 @@ TODO*
 
 # Ignore the ".vscode" directory
 .vscode
+
+# Ignore any test files (will be updated over time)
+*.pet
+*.d64
